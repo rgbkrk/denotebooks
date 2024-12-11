@@ -5,7 +5,7 @@ on:
       - ci-for-notebooks
 
 jobs:
-  publish:
+  test:
     runs-on: ubuntu-latest
 
     permissions:
@@ -31,5 +31,8 @@ jobs:
       - name: Install jupyter deno kernel
         run: deno jupyter --unstable --install
 
-      - name: Run notebook
+      - name: Run notebook 3
+        run: jupyter execute --kernel_name=deno 03_Network.ipynb
+
+      - name: Run notebook 1
         run: jupyter execute --kernel_name=deno 01_Intro.ipynb

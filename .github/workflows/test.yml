@@ -2,7 +2,10 @@ name: Test notebooks
 on:
   push:
     branches:
-      - ci-for-notebooks
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:

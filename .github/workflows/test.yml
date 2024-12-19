@@ -35,4 +35,4 @@ jobs:
         run: deno jupyter --unstable --install
 
       - name: Run notebooks
-        run: deno run --allow-run=jupyter -R ./test.ts
+        run: deno run --allow-run -R ./test.ts

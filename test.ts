@@ -1,4 +1,4 @@
-// run notebooks in CI: deno run --allow-run=jupyter -R ./test.ts
+// run notebooks in CI: deno run --allow-run -R ./test.ts
 
 if (import.meta.main) {
   const files = Deno.readDirSync(".");

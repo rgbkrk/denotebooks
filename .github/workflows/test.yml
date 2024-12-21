@@ -2,7 +2,10 @@ name: Test notebooks
 on:
   push:
     branches:
-      - ci-for-notebooks
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -31,8 +34,5 @@ jobs:
       - name: Install jupyter deno kernel
         run: deno jupyter --unstable --install
 
-      - name: Run notebook 11
-        run: jupyter execute --kernel_name=deno 11_Running_tests.ipynb
-
-      - name: Run notebook 1
-        run: jupyter execute --kernel_name=deno 01_Intro.ipynb
+      - name: Run notebooks
+        run: deno run --allow-run -R ./test.ts
